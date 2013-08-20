@@ -125,7 +125,7 @@
         
         glBindRenderbuffer(GL_RENDERBUFFER, msaaColorbuffer_);
         
-        glRenderbufferStorageMultisampleAPPLE(GL_RENDERBUFFER, samplesToUse_, pixelFormat_ , backingWidth_, backingHeight_);
+        glRenderbufferStorageMultisampleAPPLE(GL_RENDERBUFFER, samplesToUse_, GL_RGB8_OES , backingWidth_, backingHeight_);
         
         glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, msaaColorbuffer_);
         
@@ -162,6 +162,12 @@
         // bind color buffer
         glBindRenderbuffer(GL_RENDERBUFFER, colorRenderbuffer_);        
     }
+    else
+    {
+        glRenderbufferStorage(GL_RENDERBUFFER, GL_RGB8_OES, backingWidth_, backingHeight_);
+    }
+    
+
 
     CHECK_GL_ERROR();
 

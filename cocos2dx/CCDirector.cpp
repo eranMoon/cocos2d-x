@@ -932,20 +932,21 @@ void CCDisplayLinkDirector::startAnimation(void)
     CCApplication::sharedApplication()->setAnimationInterval(m_dAnimationInterval);
 }
 
+
 void CCDisplayLinkDirector::mainLoop(void)
-{
+{    
     if (m_bPurgeDirecotorInNextLoop)
     {
         m_bPurgeDirecotorInNextLoop = false;
         purgeDirector();
     }
     else if (! m_bInvalid)
-     {
-         drawScene();
-     
-         // release the objects
-         CCPoolManager::sharedPoolManager()->pop();        
-     }
+    {
+        drawScene();
+        
+        // release the objects
+        CCPoolManager::sharedPoolManager()->pop();
+    }
 }
 
 void CCDisplayLinkDirector::stopAnimation(void)

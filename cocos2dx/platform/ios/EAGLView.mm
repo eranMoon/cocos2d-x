@@ -141,6 +141,8 @@ static EAGLView *view = 0;
         requestedSamples_ = nSamples;
         preserveBackbuffer_ = retained;
         markedText_ = nil;
+        self.opaque = YES;
+        
         if( ! [self setupSurfaceWithSharegroup:sharegroup] ) {
             [self release];
             return nil;
@@ -342,6 +344,7 @@ static EAGLView *view = 0;
     else 
         pFormat = GL_RGBA8_OES;
     
+    pFormat = GL_RGB5_A1;
     return pFormat;
 }
 
