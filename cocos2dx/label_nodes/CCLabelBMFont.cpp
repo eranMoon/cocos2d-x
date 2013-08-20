@@ -894,7 +894,7 @@ void CCLabelBMFont::createFontChars()
         
         if (charSet->find(c) == charSet->end())
         {
-            CCLOG("CCLabelBMFont: Attempted to use character not defined in this bitmap: %d", c);
+            //CCLOG("CCLabelBMFont: Attempted to use character not defined in this bitmap: %d", c);
             continue;      
         }
 
@@ -1444,18 +1444,18 @@ const char* CCLabelBMFont::getFntFile()
 
 
 //LabelBMFont - Debug draw
-#if CC_LABELBMFONT_DEBUG_DRAW
+//#if CC_LABELBMFONT_DEBUG_DRAW
 void CCLabelBMFont::draw()
 {
     CCSpriteBatchNode::draw();
     const CCSize& s = this->getContentSize();
     CCPoint vertices[4]={
-        ccp(0,0),ccp(s.width,0),
-        ccp(s.width,s.height),ccp(0,s.height),
+        ccp(getPositionX(),getPositionY()),ccp( getPositionX() + s.width, getPositionY()),
+        ccp( getPositionX() + s.width, getPositionY() + s.height),ccp( getPositionX(), getPositionY() + s.height),
     };
     ccDrawPoly(vertices, 4, true);
 }
 
-#endif // CC_LABELBMFONT_DEBUG_DRAW
+//#endif // CC_LABELBMFONT_DEBUG_DRAW
 
 NS_CC_END

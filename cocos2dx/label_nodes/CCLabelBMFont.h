@@ -260,9 +260,9 @@ public:
 
     void setFntFile(const char* fntFile);
     const char* getFntFile();
-#if CC_LABELBMFONT_DEBUG_DRAW
+//#if CC_LABELBMFONT_DEBUG_DRAW
     virtual void draw();
-#endif // CC_LABELBMFONT_DEBUG_DRAW
+//#endif // CC_LABELBMFONT_DEBUG_DRAW
 private:
     char * atlasNameFromFntFile(const char *fntFile);
     int kerningAmountForFirst(unsigned short first, unsigned short second);
