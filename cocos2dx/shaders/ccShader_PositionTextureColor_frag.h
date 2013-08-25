@@ -34,6 +34,6 @@ uniform lowp vec4 u_color;                  \n\
                                             \n\
 void main()									\n\
 {											\n\
-    gl_FragColor = u_color * texture2D(CC_Texture0, v_texCoord) * u_color.w;			\n\
+    gl_FragColor = u_color * texture2D(CC_Texture0, v_texCoord);// * u_color.w;			\n\
 }											\n\
 ";
