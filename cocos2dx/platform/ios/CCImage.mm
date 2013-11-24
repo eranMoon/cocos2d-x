@@ -317,7 +317,7 @@ static bool _initWithString(const char * pText, cocos2d::CCImage::ETextAlign eAl
             [FontLabelStringDrawingHelper drawInRect:str rect:CGRectMake(0, startH, dim.width, dim.height) withZFont:font lineBreakMode:(UILineBreakMode)UILineBreakModeWordWrap alignment:align];
         }
          */
-        [str drawInRect:CGRectMake(0, startH, dim.width, dim.height) withFont:font lineBreakMode:(NSLineBreakMode)NSLineBreakByWordWrapping alignment:align];
+        [str drawInRect:CGRectMake(0, startH, dim.width, dim.height) withFont:font lineBreakMode:NSLineBreakByWordWrapping alignment:align];
         
         UIGraphicsPopContext();
         
